@@ -1,0 +1,843 @@
+{
+  "name": "awatalk",
+  "rules": {
+    "source_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "awa",
+          "flags": "i"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "label"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "instruction"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "label": {
+      "type": "SYMBOL",
+      "name": "lbl"
+    },
+    "instruction": {
+      "type": "FIELD",
+      "name": "op",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "nop"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "prn"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "pr1"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "red"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "r3d"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "blo"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "sbm"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "p0p"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "dpl"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "srn"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "mrg"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "add"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "sub"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "mul"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "div"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "cnt"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "jmp"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "eql"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "lss"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "gr8"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "lib"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "trm"
+          }
+        ]
+      }
+    },
+    "nop": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "prn": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "pr1": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "red": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "r3d": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "blo": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "FIELD",
+          "name": "arg",
+          "content": {
+            "type": "SYMBOL",
+            "name": "argument_8bit"
+          }
+        }
+      ]
+    },
+    "sbm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "FIELD",
+          "name": "arg",
+          "content": {
+            "type": "SYMBOL",
+            "name": "argument_5bit"
+          }
+        }
+      ]
+    },
+    "p0p": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "dpl": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "srn": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "FIELD",
+          "name": "arg",
+          "content": {
+            "type": "SYMBOL",
+            "name": "argument_5bit"
+          }
+        }
+      ]
+    },
+    "mrg": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "sub": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "mul": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "div": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "cnt": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "lbl": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "FIELD",
+          "name": "arg",
+          "content": {
+            "type": "SYMBOL",
+            "name": "argument_5bit"
+          }
+        }
+      ]
+    },
+    "jmp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "FIELD",
+          "name": "arg",
+          "content": {
+            "type": "SYMBOL",
+            "name": "argument_5bit"
+          }
+        }
+      ]
+    },
+    "eql": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "lss": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "gr8": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        }
+      ]
+    },
+    "trm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "lib": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "argument_8bit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        }
+      ]
+    },
+    "argument_5bit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_token"
+        }
+      ]
+    },
+    "binary_token": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        }
+      ]
+    },
+    "zero": {
+      "type": "PATTERN",
+      "value": " awa",
+      "flags": "i"
+    },
+    "one": {
+      "type": "PATTERN",
+      "value": "wa",
+      "flags": "i"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "[^ awaAWA]+"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
