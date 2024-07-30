@@ -123,6 +123,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "jro"
+          },
+          {
+            "type": "SYMBOL",
             "name": "trm"
           }
         ]
@@ -740,6 +744,31 @@
         {
           "type": "SYMBOL",
           "name": "one"
+        }
+      ]
+    },
+    "jro": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "zero"
         }
       ]
     },

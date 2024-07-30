@@ -42,6 +42,7 @@ module.exports = grammar({
       $.lss,
       $.gr8,
       $.lib,
+      $.jro,
       $.trm,
     )),
 
@@ -71,6 +72,7 @@ module.exports = grammar({
 
     // awa5_rs instructions
     lib: $ => seq(...mapHex($, '0x17')),
+    jro: $ => seq(...mapHex($, '0x18')),
 
     argument_8bit: $ => seq(...mapBits($, 8)),
 
